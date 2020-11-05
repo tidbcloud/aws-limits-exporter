@@ -33,7 +33,8 @@ perform in order for this server to work:
         {
             "Effect": "Allow",
             "Action": [
-                "support:*"
+                "support:DescribeTrustedAdvisorCheckResult",
+                "support:RefreshTrustedAdvisorCheck"
             ],
             "Resource": [
                 "*"
