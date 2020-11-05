@@ -16,6 +16,8 @@ import (
 	"github.com/prometheus/client_golang/prometheus"
 )
 
+// sync from https://aws.amazon.com/cn/premiumsupport/ta-iam/
+// update time: 2020-11-05
 // Service limits check
 // Auto Scaling - Groups		fW7HH0l7J9
 // Auto Scaling - Launch Configurations		aW7HH0l7J9
