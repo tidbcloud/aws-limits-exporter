@@ -6,9 +6,6 @@ import (
 	"time"
 
 	"github.com/aws/aws-sdk-go/aws"
-	"github.com/aws/aws-sdk-go/aws/credentials"
-	"github.com/aws/aws-sdk-go/aws/credentials/ec2rolecreds"
-	"github.com/aws/aws-sdk-go/aws/ec2metadata"
 	"github.com/aws/aws-sdk-go/aws/endpoints"
 	"github.com/aws/aws-sdk-go/aws/session"
 	"github.com/aws/aws-sdk-go/service/support"
@@ -16,6 +13,8 @@ import (
 	"github.com/prometheus/client_golang/prometheus"
 )
 
+// sync from https://aws.amazon.com/cn/premiumsupport/ta-iam/
+// update time: 2020-11-05
 // Service limits check
 // Auto Scaling - Groups		fW7HH0l7J9
 // Auto Scaling - Launch Configurations		aW7HH0l7J9
@@ -135,24 +134,11 @@ func validateRegionName(region string) {
 
 // NewSupportClient ...
 func NewSupportClient() *SupportClientImpl {
-	creds := credentials.NewChainCredentials(
-		[]credentials.Provider{
-			&credentials.EnvProvider{},
-			&credentials.SharedCredentialsProvider{},
-			&ec2rolecreds.EC2RoleProvider{
-				Client: ec2metadata.New(session.Must(session.NewSession())),
-			},
-		})
-
-	awsConfig := aws.NewConfig()
-	awsConfig.WithCredentials(creds)
-
 	// Trusted Advisor API does not work in every region, but we can use it
 	// via the `us-east-1` region to get data from other regions
-	awsConfig.WithRegion("us-east-1")
+	sess := session.Must(session.NewSession(aws.NewConfig().WithRegion("us-east-1")))
 
-	sess := session.New(awsConfig)
-
+	session.NewSession()
 	return &SupportClientImpl{
 		SupportClient: support.New(sess),
 	}
