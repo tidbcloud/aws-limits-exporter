@@ -2,7 +2,7 @@
 export GOBIN := $(PWD)/bin
 export PATH := $(GOBIN):$(PATH)
 export INSTALL_FLAG=
-export TAG=0.4.1
+export TAG=0.4.2
 
 DOCKER_IMAGE = aws-limits-exporter
 DOCKER_REPO = gcr.io/pingcap-public
