@@ -16,53 +16,57 @@ import (
 // sync from https://aws.amazon.com/cn/premiumsupport/ta-iam/
 // update time: 2020-11-05
 // Service limits check
-// Auto Scaling - Groups		fW7HH0l7J9
-// Auto Scaling - Launch Configurations		aW7HH0l7J9
-// CloudFormation - Stacks		gW7HH0l7J9
+
+// Auto Scaling - Groups	fW7HH0l7J9
+// Auto Scaling - Launch Configurations	aW7HH0l7J9
+// CloudFormation - Stacks	gW7HH0l7J9
 // DynamoDB Read Capacity		6gtQddfEw6
-// DynamoDB Write Capacity 	c5ftjdfkMr
-// EBS - Active Snapshots		eI7KK0l7J9
-// EBS - Cold HDD (sc1) 	gH5CC0e3J9
-// EBS - General Purpose SSD Volume Storage		dH7RR0l6J9
-// EBS - Magnetic (standard) Volume Storage		cG7HH0l7J9
-// EBS Throughput Optimized HDD (st1)		wH7DD0l3J9
-// EBS - Provisioned IOPS (SSD) Volume Aggregate IOPS		tV7YY0l7J9
-// EBS - Provisioned IOPS SSD (io1) Volume Storage		gI7MM0l7J9
-// EC2 - Elastic IP Addresses		aW9HH0l8J6
-// EC2 - On-Demand Instances		0Xc6LMYG8P
-// EC2 - Reserved Instance Leases		iH7PP0l7J9
-// ELB - Active Load Balancers		iK7OO0l7J9
-// IAM - Group		sU7XX0l7J9
-// IAM - Instance Profiles		nO7SS0l7J9
-// IAM - Policies		pR7UU0l7J9
-// IAM - Roles		oQ7TT0l7J9
-// IAM - Server Certificates		rT7WW0l7J9
-// IAM - Users		qS7VV0l7J9
-// Kinesis - Shards per Region		bW7HH0l7J9
-// RDS - Cluster Parameter Groups		jtlIMO3qZM
-// RDS - Cluster roles		7fuccf1Mx7
-// RDS - Clusters		gjqMBn6pjz
-// RDS - DB Instances		XG0aXHpIEt
-// RDS - DB Parameter Groups		jEECYg2YVU
-// RDS - DB Security Groups		gfZAn3W7wl
-// RDS - DB snapshots per user		dV84wpqRUs
-// RDS - Event Subscriptions		keAhfbH5yb
-// RDS - Max Auths per Security Group		dBkuNCvqn5
-// RDS - Option Groups		3Njm0DJQO9
-// RDS - Read Replicas per Master		pYW8UkYz2w
-// RDS - Reserved Instances		UUDvOa5r34
-// RDS - Subnet Groups		dYWBaXaaMM
-// RDS - Subnets per Subnet Group		jEhCtdJKOY
-// RDS - Total Storage Quota		P1jhKWEmLa
-// Route 53 Hosted Zones		dx3xfcdfMr
-// Route 53 Max Health Checks		ru4xfcdfMr
-// Route 53 Reusable Delegation Sets		ty3xfcdfMr
-// Route 53 Traffic Policies		dx3xfbjfMr
-// Route 53 Traffic Policy Instances		dx8afcdfMr
-// SES - Daily Sending Quota		hJ7NN0l7J9
-// VPC - Elastic IP Address		lN7RR0l7J9
-// VPC - Internet Gateways		kM7QQ0l7J9
-// VPC - Network Interfaces		jL7PP0l7J9
+// DynamoDB Write Capacity		c5ftjdfkMr
+// EBS - Active Snapshots	eI7KK0l7J9
+// EBS - Cold HDD (sc1)	gH5CC0e3J9
+// EBS - General Purpose SSD Volume Storage	dH7RR0l6J9
+// EBS - Magnetic (standard) Volume Storage	cG7HH0l7J9
+// EBS Throughput Optimized HDD (st1)	wH7DD0l3J9
+// EBS - Provisioned IOPS (SSD) Volume Aggregate IOPS	tV7YY0l7J9
+// EBS - Provisioned IOPS SSD (io1) Volume Storage	gI7MM0l7J9
+// EC2 - Classic Elastic IP Addresses	aW9HH0l8J6
+// EC2 - On-Demand Instances	0Xc6LMYG8P
+// EC2 - Reserved Instance Leases	iH7PP0l7J9
+// EC2 - VPC Elastic IP Address	lN7RR0l7J9
+// ELB - Active Load Balancers	iK7OO0l7J9
+// ELB - Application Load Balancers	EM8b3yLRTr
+// ELB - Network Load Balancers	8wIqYSt25K
+// IAM - Group	sU7XX0l7J9
+// IAM - Instance Profiles	nO7SS0l7J9
+// IAM - Policies	pR7UU0l7J9
+// IAM - Roles	oQ7TT0l7J9
+// IAM - Server Certificates	rT7WW0l7J9
+// IAM - Users	qS7VV0l7J9
+// Kinesis - Shards per Region	bW7HH0l7J9
+// RDS - Cluster Parameter Groups	jtlIMO3qZM
+// RDS - Cluster roles	7fuccf1Mx7
+// RDS - Clusters	gjqMBn6pjz
+// RDS - DB Instances	XG0aXHpIEt
+// RDS - DB Parameter Groups	jEECYg2YVU
+// RDS - DB Security Groups	gfZAn3W7wl
+// RDS - DB snapshots per user	dV84wpqRUs
+// RDS - Event Subscriptions	keAhfbH5yb
+// RDS - Max Auths per Security Group	dBkuNCvqn5
+// RDS - Option Groups	3Njm0DJQO9
+// RDS - Read Replicas per Master	pYW8UkYz2w
+// RDS - Reserved Instances	UUDvOa5r34
+// RDS - Subnet Groups	dYWBaXaaMM
+// RDS - Subnets per Subnet Group	jEhCtdJKOY
+// RDS - Total Storage Quota	P1jhKWEmLa
+// Route 53 Hosted Zones	dx3xfcdfMr
+// Route 53 Max Health Checks	ru4xfcdfMr
+// Route 53 Reusable Delegation Sets	ty3xfcdfMr
+// Route 53 Traffic Policies	dx3xfbjfMr
+// Route 53 Traffic Policy Instances	dx8afcdfMr
+// SES - Daily Sending Quota	hJ7NN0l7J9
+// VPC - Internet Gateways	kM7QQ0l7J9
+// VPCs	jL7PP0l7J9
+
 var (
 	checkIDs = []string{
 		"fW7HH0l7J9",
@@ -81,6 +85,8 @@ var (
 		"0Xc6LMYG8P",
 		"iH7PP0l7J9",
 		"iK7OO0l7J9",
+		"EM8b3yLRTr",
+		"EM8b3yLRTr",
 		"sU7XX0l7J9",
 		"nO7SS0l7J9",
 		"pR7UU0l7J9",
