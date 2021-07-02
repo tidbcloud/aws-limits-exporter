@@ -22,7 +22,6 @@ var (
 
 func main() {
 	flag.Parse()
-
 	glog.Infof("AWS Limits Exporter v%s started.", VERSION)
 
 	exporter := core.NewSupportExporter(*region)

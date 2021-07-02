@@ -242,8 +242,8 @@ func (e *SupportExporter) Describe(ch chan<- *prometheus.Desc) {
 			serviceName := aws.StringValue(resource.Metadata[1])
 			serviceNameLower := strings.ToLower(serviceName)
 
-			e.metricsUsed[resourceID] = newServerMetric(region, serviceNameLower, "used_total", "Current used amount of the given resource.", []string{"resource"})
-			e.metricsLimit[resourceID] = newServerMetric(region, serviceNameLower, "limit_total", "Current limit of the given resource.", []string{"resource"})
+			e.metricsUsed[resourceID] = newServerMetric(region, serviceNameLower, "used_total", "Current used amount of the given resource.", []string{"resource", "service"})
+			e.metricsLimit[resourceID] = newServerMetric(region, serviceNameLower, "limit_total", "Current limit of the given resource.", []string{"resource", "service"})
 
 			ch <- e.metricsUsed[resourceID]
 			ch <- e.metricsLimit[resourceID]
@@ -275,13 +275,14 @@ func (e *SupportExporter) Collect(ch chan<- prometheus.Metric) {
 			}
 
 			resourceName := aws.StringValue(resource.Metadata[2])
+			serviceName := aws.StringValue(resource.Metadata[1])
 
 			metricLimit := e.metricsLimit[resourceID]
 			limitValue, _ := strconv.ParseFloat(aws.StringValue(resource.Metadata[3]), 64)
-			ch <- prometheus.MustNewConstMetric(metricLimit, prometheus.GaugeValue, limitValue, resourceName)
+			ch <- prometheus.MustNewConstMetric(metricLimit, prometheus.GaugeValue, limitValue, resourceName, serviceName)
 
 			usedValue, _ := strconv.ParseFloat(aws.StringValue(resource.Metadata[4]), 64)
-			ch <- prometheus.MustNewConstMetric(metricUsed, prometheus.GaugeValue, usedValue, resourceName)
+			ch <- prometheus.MustNewConstMetric(metricUsed, prometheus.GaugeValue, usedValue, resourceName, serviceName)
 		}
 	}
 }
