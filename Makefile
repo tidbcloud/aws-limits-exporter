@@ -2,7 +2,7 @@
 export GOBIN := $(PWD)/bin
 export PATH := $(GOBIN):$(PATH)
 export INSTALL_FLAG=
-export TAG=0.4.4
+export TAG=0.4.5
 
 DOCKER_IMAGE = aws-limits-exporter
 DOCKER_REPO = gcr.io/pingcap-public
@@ -27,7 +27,7 @@ test-cover:
 	@go test ./... -timeout 2m -race -cover
 
 build:
-	CGO_ENABLED=0 GOOS=$(OS) go build $(INSTALL_FLAG) -a --ldflags "-X main.VERSION=$(TAG) -w -extldflags '-static'" -tags netgo -o $(GOBIN)/aws-limits-exporter ./cmd
+	CGO_ENABLED=0 GOOS=$(OS) go build -mod vendor $(INSTALL_FLAG) -a --ldflags "-X main.VERSION=$(TAG) -w -extldflags '-static'" -tags netgo -o $(GOBIN)/aws-limits-exporter ./cmd
 
 clean:
 	@go clean
